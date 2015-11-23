@@ -14,15 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function(){
-	$(".search").ajaxComplete(function(){$(".search_box").append(
-		<%= <div> 
-				<% @search_results.items.each do |result| %>
-				<p> <%= result["title"] %> </p>
-				<p> <%= result["displayLink"] %> </p>
-				<p> <%= result["snippet"] %> </p>
-				<% end %>
-			</div>);
-		%>
-	});
-});
+

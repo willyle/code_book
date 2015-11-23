@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to sign_in_path
     else 
       flash[:alert] = "There was an issue"
-      render :new
+      redirect_to root_path
     end
   end
 
@@ -37,13 +37,13 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path, notice: "Account has been deleted."
   end
-  
-  private
-  def set_user
-    @user = User.find(params[:id])
-  end
 
-  def user_params
-    params.permit(:username, :password, :password_confirmation)
-  end
+  private
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    def user_params
+      params.permit(:username, :password, :password_confirmation)
+    end
 end

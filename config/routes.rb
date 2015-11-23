@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get "/sign_out" => "sessions#destroy"
 
   resources :users
+
   
 end

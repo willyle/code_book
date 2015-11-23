@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      Profile.create(email: params[:email], user_id: @user.id)
       flash[:notice] = "User created, please sign in."
       redirect_to sign_in_path
     else 
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @cards = @user.cards
+    @user = User.find(params[:id])
   end
 
   def destroy
@@ -43,6 +44,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require.permit(:username, :email, :password, :password_confirmation)
+    params.permit(:username, :password, :password_confirmation)
   end
 end

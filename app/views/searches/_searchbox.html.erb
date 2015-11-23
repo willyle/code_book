@@ -1,4 +1,4 @@
-<%= form_tag(customsearch_path, :method => "post", remote: true, class: "search_box") do %>
+<%= form_tag(customsearch_path, :method => "post", remote: true) do %>
 <%= label_tag(:q, "Enter search terms:") %>
 <%= text_field_tag(:q) %>
 <p><%= label_tag(:as_qdr, "Select the time period you would like to receive results from:")%></p>
@@ -31,5 +31,5 @@
 		<%= check_box_tag("site[]", "css-tricks.com")%></li>
 	</li>
 </ul>
-<%= submit_tag("Search") %>
+<%= submit_tag("Search", class="search") %>
 <% end %>

@@ -12,12 +12,6 @@ class User < ActiveRecord::Base
 				 confirmation: true,
 				 length: {minimum: 6}
 
-	validates :password_salt,
-				 presence: true
-
-	validates :password_hash,
-				 presence: true
-
 	has_one :profile
 	
 	has_many :searches, dependent: :destroy
@@ -25,6 +19,7 @@ class User < ActiveRecord::Base
 	def encrypt_password
 		self.password_salt = BCrypt::Engine.generate_salt
 		self.password_hash = BCrypt::Engine.hash_secret(password,password_salt)
+		binding.pry
 	end
 
 	def self.authenticate(login, password)
@@ -39,9 +34,9 @@ class User < ActiveRecord::Base
 		end
 
 		if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-			user
+			return user
 		else
-			nil
+			return nil
 		end
 	end
 end

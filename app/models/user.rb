@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	validates :password,
 				 presence: true,
 				 confirmation: true,
-				 length: {mininum: 6}
+				 length: {minimum: 6}
 
 	validates :password_salt,
 				 presence: true

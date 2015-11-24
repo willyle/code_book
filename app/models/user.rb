@@ -9,10 +9,9 @@ class User < ActiveRecord::Base
 				 length: {minimum: 3}
 
 	validates :password,
-				 confirmation: true,
-				 length: {minimum: 6}
+				 confirmation: true
 
-	has_one :profile
+	has_one :profile, dependent: :destroy
 	
 	has_many :searches, dependent: :destroy
 

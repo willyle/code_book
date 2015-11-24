@@ -22,9 +22,10 @@ class SearchesController < ApplicationController
 		end
 		render :show
 	end
-	
 	def results
 	end
 	def show
+		@user = User.find(session[:user_id])
+		@search = @user.searches.all
 	end
 end

@@ -1,0 +1,22 @@
+<% if session[:user_id] %>
+	<% @search.each do |search| %>
+		<div class="card">
+		<% @tags = search.tags.all %>
+		<% @links = search.links.all %>
+			<ul>
+			<li><h3><%= search.title %></h3></li>
+			<li><%= search.note %></li>
+			
+			<% @tags.each do |tag| %>
+				<li><%= tag.language.name %></li>
+			<% end %>
+			
+			<% @links.each do |link| %>
+				<li>"<%= link.title %>"</li>
+				<li><%= link.url %></li>
+			<% end %>
+			
+			</ul>
+		</div>
+	<% end %>
+<% end %>

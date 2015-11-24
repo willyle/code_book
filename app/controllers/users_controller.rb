@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to sign_in_path
     else 
       flash[:alert] = "There was an issue"
-      redirect_to root_path
+      redirect_to sign_up_path
     end
   end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(edit_user_params)
+    @user.update(username: params[:username])
     @profile = @user.profile
     @profile.update(profile_params)
     redirect_to user_path(@user), notice: "Sucessfully updated profile."
@@ -51,9 +51,6 @@ class UsersController < ApplicationController
       params.permit(:username, :password, :password_confirmation)
     end
 
-    def edit_user_params
-      params.require(:user).permit(:username)
-    end
 
     def profile_params
       params.require(:profile).permit(:fname, :lname, :birthday, :work, :exp_level)

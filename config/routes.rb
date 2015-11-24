@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/sign_out" => "sessions#destroy"
   resource :searches
   resources :users
+
   
   post '/search_link' => 'searches#link'
 end

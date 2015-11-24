@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Profile</h1>
+<ul>
+	<li>Username: <%= @user.username %></li>
+	<li>Email:  <%= @profile.email %></li>
+	<li>First Name: <%= @profile.fname %></li>
+	<li>Last Name: <%= @profile.lname %></li>
+	<li>Birthday: <%= @profile.birthday %></li>
+	<li>Work: <%= @profile.work %></li>
+	<li>Experience Level: <%= @profile.exp_level %></li>
+</ul>
+
+<%= link_to 'Edit Profile', edit_user_path %>
+<%= link_to 'Delete Account', @user, method: :delete, data: {confirm: "Are you sure?"} %>

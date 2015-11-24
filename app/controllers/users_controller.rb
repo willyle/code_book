@@ -22,15 +22,19 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @profile = @user.profile
   end
 
   def update
-    @user.update(user_params)
+    @user.update(edit_user_params)
+    @profile = @user.profile
+    @profile.update(profile_params)
     redirect_to user_path(@user), notice: "Sucessfully updated profile."
   end
 
   def show
     @user = User.find(params[:id])
+    @profile = @user.profile
   end
 
   def destroy
@@ -45,5 +49,13 @@ class UsersController < ApplicationController
 
     def user_params
       params.permit(:username, :password, :password_confirmation)
+    end
+
+    def edit_user_params
+      params.require(:user).permit(:username)
+    end
+
+    def profile_params
+      params.require(:profile).permit(:fname, :lname, :birthday, :work, :exp_level)
     end
 end

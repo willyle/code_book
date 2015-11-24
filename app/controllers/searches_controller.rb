@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
 		@as_qdr = params[:as_qdr]
 		@q = params[:q]
 		@q = @q.gsub(" ","+")
-
+		@search = Search.create(title: params[:q], note: "No notes yet", user_id: session[:user_id])
 		if params[:site]
 			@sites = "+site%3A"
 			params[:site].each do |site|
@@ -21,6 +21,7 @@ class SearchesController < ApplicationController
 			@search_results = Search.search(@q, @as_qdr)
 		end
 	end
+	
 	def results
 	end
 	def show

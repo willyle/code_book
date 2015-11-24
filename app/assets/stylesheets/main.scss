@@ -2,18 +2,29 @@ body {
     margin: 0;
     padding: 0;
 }
+.clear {
+	clear: both;
+}
 
 #container {
 	width: 98%;
 	margin: 0 auto;
 	border: 1px solid gray;
 }
+
 #search-container {
 	width:70%;
 	margin:0 auto;
 	border: 1px solid black;
+	float:left;
 }
 
+#recent-container {
+	width: 29%;
+	margin:0 auto;
+	float: left;
+	border: 1px solid black;
+}
 
 #logo {
 	float: left;

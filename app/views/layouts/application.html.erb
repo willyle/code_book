@@ -12,7 +12,7 @@
   <nav id="nav">
     <ul>
       <% if session[:user_id] %>
-      <li><%= link_to "Profile", user_path %></li>
+      <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
       <li><%= link_to "Dashboard", dashboard_path %></li>
       <li><%= link_to "All Searches", "#" %></li>
       <li><%= link_to "Sign Out", sign_out_path %></li>

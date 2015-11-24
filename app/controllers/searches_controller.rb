@@ -21,10 +21,11 @@ class SearchesController < ApplicationController
 			@search_results = Search.search(@q, @as_qdr)
 		end
 	end
-	
 	def results
 	end
 	def show
+		@user = User.find(session[:user_id])
+		@search = @user.searches.all
 	end
 	def test
 		@q =  params[:q]

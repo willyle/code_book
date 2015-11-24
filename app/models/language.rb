@@ -1,6 +1,6 @@
 class Language < ActiveRecord::Base
 	validates :name,
-				 uniquness: true,
+				 uniqueness: true,
 				 presence: true
 
 	has_many :tags

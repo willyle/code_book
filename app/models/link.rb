@@ -1,6 +1,6 @@
 class Link < ActiveRecord::Base
 	validates :url,
-				 :uniqueness: true,
+				 uniqueness: true,
 				 presence: true
 				 
 	has_many :resources

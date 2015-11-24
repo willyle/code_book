@@ -1,0 +1,7 @@
+<% if @message %>
+	<%= @message %>
+<% else %>
+	<div id="modal">
+		<%= @page.html_safe %>
+	</div>
+<% end %>

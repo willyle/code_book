@@ -1,0 +1,3 @@
+$(document).ready(function(){
+	$("#search_results").html('<%@search_results["items"].each do |result| %><p><h2><%=link_to result["title"], search_link_path(url: result["link"]), method: "post", target: "_blank", class: "searchlink" %></h2></p><p class="cb-greenlink"><%=result["link"]%></p><p><%description=result["snippet"].gsub("\n","")%><%=description%></p><%end%>');
+});

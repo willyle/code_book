@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get "/dashboard" => "home#dashboard"
   post 'customsearch' => 'searches#custom'
+
   get "/sign_up" => "users#new"
   post "/sign_up" => "users#create"
   get "/sign_in" => "sessions#new"
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
 
 
   
+  post '/search_link' => 'searches#link'
 end

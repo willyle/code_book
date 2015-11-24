@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   root 'home#index'
+  get "/dashboard" => "home#dashboard"
   post 'customsearch' => 'searches#custom'
   get "/sign_up" => "users#new"
   post "/sign_up" => "users#create"
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get "/sign_out" => "sessions#destroy"
   resource :searches
   resources :users
+
 
   
 end

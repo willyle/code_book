@@ -20,10 +20,52 @@ body {
 }
 
 #recent-container {
-	width: 29%;
+	width: 29.6%;
 	margin:0 auto;
 	float: left;
 	border: 1px solid black;
+}
+
+.recent-card {
+	width: 100%;
+	height: 60px;
+	border: 1px solid green;
+	.question {
+		margin-left: 5px;
+		margin-top: 2px;
+		display: inline-block;
+	}
+	.answer-label {
+		text-align: right;
+		margin-right: 5px;
+		margin-bottom: 10px;
+	}
+
+	.down {
+		width: 20px;
+		color: black;
+	}
+	.answer-dropdown {
+		width: 100%;
+		height: 60px;
+		border: 1px solid green;
+		display: inline-block;
+		display: none;
+		margin-top: -10px;
+	}
+	// .show {
+	// 	display:inline-block;
+	// }
+
+	// .hide { 
+	// 	display: none;
+	// }
+
+	.answer-text {
+		margin-left: 5px;
+		margin-top: 2px;
+		display: inline-block;
+	}
 }
 
 #logo {

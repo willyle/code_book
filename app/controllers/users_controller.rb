@@ -10,14 +10,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      Profile.create(email: params[:email], user_id: @user.id)
-      flash[:notice] = "User created, please sign in."
-      redirect_to sign_in_path
-    else 
-      flash[:alert] = "There was an issue"
-      redirect_to sign_up_path
+    if params[:password].length > 5
+      @user = User.new(user_params)
+      if @user.save
+        Profile.create(email: params[:email], user_id: @user.id)
+        flash[:notice] = "User created, please sign in."
+        redirect_to sign_in_path
+      else 
+        flash[:alert] = "There was an issue"
+        redirect_to sign_up_path
+      end
+    else
+       flash[:alert] = "There was an issue"
+       redirect_to sign_up_path
     end
   end
 
@@ -26,9 +31,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(username: params[:username])
+    @user.update(edit_user_params)
     @profile = @user.profile
     @profile.update(profile_params)
+    puts "***********"
+    puts @profile.errors.full_messages
     redirect_to user_path(@user), notice: "Sucessfully updated profile."
   end
 
@@ -39,6 +46,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    session[:user_id] = nil
     redirect_to root_path, notice: "Account has been deleted."
   end
 
@@ -51,8 +59,10 @@ class UsersController < ApplicationController
       params.permit(:username, :password, :password_confirmation)
     end
 
-
+    def edit_user_params
+      params.require(:user).permit(:username)
+    end
     def profile_params
-      params.require(:profile).permit(:fname, :lname, :birthday, :work, :exp_level)
+      params.require(:profile).permit(:fname, :lname, :email, :birthday, :work, :exp_level)
     end
 end

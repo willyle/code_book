@@ -1,14 +1,15 @@
 <h1>Edit Profile</h1>
 <%= form_for @user do |f| %>
   <%= f.text_field :username %><br>
+  
   <%= fields_for @profile do |p| %>
-    <%= p.email_field :email %><br>
-    <%= p.text_field :fname %><br>
-    <%= p.text_field :lname %><br>
-    <%= p.date_field :birthday %><br>
-    <%= p.text_field :work %><br>
-    <%= p.label :years_experience %>
-    <%= p.select :exp_level, options_for_select([["Select One", ""], "0-1", "2-4", "5-7", "8-10", "11+"]) %><br>
+      <%= p.email_field :email %><br>
+      <%= p.text_field :fname %><br>
+      <%= p.text_field :lname %><br>
+      <%= p.date_field :birthday %><br>
+      <%= p.text_field :work %><br>
+      <%= p.label :years_experience %>
+      <%= p.select :exp_level, options_for_select([["Select One", ""], "0-1", "2-4", "5-7", "8-10", "11+"]) %><br>
     <% end %>
       <%= f.submit %>
 <% end %>

@@ -20,12 +20,31 @@ class SearchesController < ApplicationController
 		if params[:q]
 			@search_results = Search.search(@q, @as_qdr)
 		end
-		render :show
 	end
 	def results
 	end
 	def show
 		@user = User.find(session[:user_id])
 		@search = @user.searches.all
+	end
+	def test
+		@q =  params[:q]
+		@as_qdr = params[:as_qdr]
+	end
+	def link
+		url = params[:url]
+		@page = fetch_url url
+		
+		if !@page
+			@message = "We are not able to display the link."
+		end
+	end
+	def fetch_url(url)
+  		r = Net::HTTP.get_response(URI.parse(url))
+  		if r.is_a? Net::HTTPSuccess
+    		r.body.force_encoding("UTF-8")
+  		else
+    		nil
+  		end
 	end
 end

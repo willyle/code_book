@@ -1,0 +1,11 @@
+.cb-greenlink{
+	color: green;
+}
+
+#search_results a{
+	text-decoration: none;
+}
+
+#modal{
+	width: 100%;
+}

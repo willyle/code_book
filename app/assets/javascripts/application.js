@@ -13,10 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-
-$(document).ready(function(){
-    $(".down").click(function(){
-        $(this).parent().parent().find(".answer-dropdown").slideToggle(100);
-    });
-});

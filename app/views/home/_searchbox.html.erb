@@ -1,6 +1,6 @@
 <%= form_tag(customsearch_path, :method => "post", remote: true) do %>
 <%= label_tag(:q, "Enter search terms:") %>
-<%= text_field_tag(:q) %>
+<%= text_field_tag(:q, "", class: "searchbar") %>
 <p><%= label_tag(:as_qdr, "Select the time period you would like to receive results from:")%></p>
 <ul>
 	<li><%= radio_button_tag(:as_qdr, "false") %>

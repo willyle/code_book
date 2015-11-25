@@ -9,63 +9,6 @@ body {
 #container {
 	width: 98%;
 	margin: 0 auto;
-	border: 1px solid gray;
-}
-
-#search-container {
-	width:70%;
-	margin:0 auto;
-	border: 1px solid black;
-	float:left;
-}
-
-#recent-container {
-	width: 29.6%;
-	margin:0 auto;
-	float: left;
-	border: 1px solid black;
-}
-
-.recent-card {
-	width: 100%;
-	height: 60px;
-	border: 1px solid green;
-	.question {
-		margin-left: 5px;
-		margin-top: 2px;
-		display: inline-block;
-	}
-	.answer-label {
-		text-align: right;
-		margin-right: 5px;
-		margin-bottom: 10px;
-	}
-
-	.down {
-		width: 20px;
-		color: black;
-	}
-	.answer-dropdown {
-		width: 100%;
-		height: 60px;
-		border: 1px solid green;
-		display: inline-block;
-		display: none;
-		margin-top: -10px;
-	}
-	// .show {
-	// 	display:inline-block;
-	// }
-
-	// .hide { 
-	// 	display: none;
-	// }
-
-	.answer-text {
-		margin-left: 5px;
-		margin-top: 2px;
-		display: inline-block;
-	}
 }
 
 #logo {
@@ -93,5 +36,58 @@ body {
 		display: block;
 		text-align: center;
 		margin-top: 5px;
+	}
+}
+
+#search-container {
+	width:70%;
+	margin:0 auto;
+	float:left;
+}
+
+.searchbar {
+	width: 500px;
+	height: 50px;
+	border: 1px solid black;
+}
+
+#recent-container {
+	width: 30%;
+	margin:0 auto;
+	float: left;
+	position: relative;
+}
+
+.recent-card {
+	width: 100%;
+	height: 60px;
+	display: inline-block;
+	background-color: #d1cfcf;
+	.question {
+		margin-left: 5px;
+		margin-top: 2px;
+		display: inline-block;
+	}
+	.answer-label {
+		text-align: right;
+		margin-right: 10px;
+	}
+
+	.down {
+		width: 20px;
+	}
+	.answer-dropdown {
+		width: 100%;
+		height: 40px;
+		background-color: #dbdbdb;
+		display: inline-block;
+		display: none;
+		border-bottom: 1px solid white;
+	}
+
+	.answer-text {
+		margin-left: 5px;
+		margin-top: 2px;
+		display: inline-block;
 	}
 }

@@ -1,22 +1,33 @@
 <% if session[:user_id] %>
 	<% @search.each do |search| %>
-		<div class="card">
-		<% @tags = search.tags.all %>
-		<% @links = search.links.all %>
-			<ul>
-			<li><h3><%= search.title %></h3></li>
-			<li><%= search.note %></li>
-			
-			<% @tags.each do |tag| %>
-				<li><%= tag.language.name %></li>
-			<% end %>
-			
+		<div class="recent-card">
+			<% @tags = search.tags.all %>
+			<% @links = search.links.all %>
+			<div class="question"><%= search.title %>
+				<p><%= search.note %></p>
+			</div>
+			<div class="answer-label">Answers
+			  <img class="down" src="/assets/down.png">
+			</div>
 			<% @links.each do |link| %>
-				<li>"<%= link.title %>"</li>
-				<li><%= link.url %></li>
-			<% end %>
-			
-			</ul>
+				<% @resources = link.resources.all%>
+				<div class="answer-dropdown">
+		 		<div class="answer-text">Answer: wwww.stackoverflow.com
+					"<%= link.title %>"
+					<%= link.url %>
+					<p>
+						<% @resources.each do |resource| %>
+							<%= resource.note %>
+						<% end %>
+					</p>
+				<% end %>
+				</div>
+				<div class="answer-language">
+					<% @tags.each do |tag| %>
+						<%= tag.language.name %>
+					<% end %>
+				</div>
+			</div>
 		</div>
 	<% end %>
 <% end %>

@@ -4,5 +4,6 @@ class HomeController < ApplicationController
 
   def dashboard
   	@user = User.find(session[:user_id])
+	@search = @user.searches.all
   end
 end

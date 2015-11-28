@@ -1,18 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
+  before (:each) do 
+    User.create(username: "testuser", password: "password")
+    Profile.create(user_id: 1,  email: "test@test.com")
+  end
 
-  describe "GET #create" do
+  describe "login test" do
     it "returns http success" do
-      get :create
+      User.authenticate("test@test.com", "password")
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
+  describe "session destroy test" do
+    let(:session){User.authenticate("test@test.com", "password")}
+    it "returns no session" do
+      delete :destroy 
+      expect(response).to redirect_to(root_path)
     end
   end
 

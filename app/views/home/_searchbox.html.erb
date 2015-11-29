@@ -1,5 +1,5 @@
 <%= form_tag(customsearch_path, :method => "post", remote: true) do %>
-<%= text_field_tag(:q, "Type your search here", class: "searchbar") %><br>
+<%= text_field_tag(:q, nil, placeholder: "Type your search here", class: "searchbar") %><br>
 <div class="time-filter"><%= label_tag(:as_qdr, "Time Period")%><img class="down" src="/assets/down.png">
   <div class="time-dropdown">
   	<ul>

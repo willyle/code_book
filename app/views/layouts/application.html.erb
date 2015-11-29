@@ -28,6 +28,16 @@
 <%= flash[:notice] %>
 <%= flash[:alert] %>
 
+  <% if @page %>
+    <div id="controls">
+      <%= link_to "Save", save_path(url: params[:url], search_id: params[:search_id], title: params[:title]), method: "post", remote: true, class: "save" %>
+      <%= link_to "Save & Close", save_path(url: params[:url], search_id: params[:search_id], title: params[:title]), method: "post", remote: true, class: "save_close" %>
+      <%= link_to "Close" %>
+    </div>
+    <div id="save_message">
+    </div>
+  <% end %>
+
   <div id="container">
     <%= yield %>
   </div>

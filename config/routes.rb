@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'resources/save'
+
   root 'home#index'
   get "/dashboard" => "home#dashboard"
   post 'customsearch' => 'searches#custom'
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
 
   
   post '/search_link' => 'searches#link'
+  post '/save' => 'resources#save'
 end

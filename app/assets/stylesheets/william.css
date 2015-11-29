@@ -6,6 +6,12 @@
 	text-decoration: none;
 }
 
+#controls{
+	background-color: #ffffff;
+	border: solid 1px black;
+	width: 200px;
+	height: 50px;
+}
 #modal{
 	width: 100%;
 }

@@ -10,6 +10,12 @@ class SearchesController < ApplicationController
 		@q = params[:q]
 		@q = @q.gsub(" ","+")
 		@search = Search.create(title: params[:q], note: "No notes yet", user_id: session[:user_id])
+		@languages = Language.all
+		@languages.each do |language|
+			if params[:q] =~ /#{language.name}/i
+				Tag.create(search_id: @search.id, language_id: language.id)
+			end
+		end
 		if params[:site]
 			@sites = "+site%3A"
 			params[:site].each do |site|

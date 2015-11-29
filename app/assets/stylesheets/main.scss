@@ -43,20 +43,19 @@ body {
 	width:60%;
 	margin:0 auto;
 	float:left;
-	position: relative;
 }
 
 .searchbar {
 	width: 400px;
 	height: 30px;
 	border: 1px solid black;
+	color: grey;
 }
 
 #recent-container {
 	width: 35%;
 	margin:0 auto;
 	float: right;
-	position: relative;
 }
 
 .recent-card {
@@ -90,5 +89,33 @@ body {
 		margin-left: 5px;
 		margin-top: 2px;
 		display: inline-block;
+	}
+}
+
+.time-filter, .sites-filter {
+	margin-top: 10px;
+	margin-right: 5px;
+	width: 130px;
+	height: 30px;
+	background-color: #d1cfcf;
+	float:left;
+	text-align: center;
+	.down {
+		width: 20px;
+	}
+}
+
+.time-dropdown, .sites-dropdown {
+	width: 100%;
+	list-style: none;
+	text-align: left;
+	margin-top: -10px;
+	display: none;
+	ul {
+		background-color: #dbdbdb;
+		padding-left: 0;
+	}
+	li {
+		display: block;
 	}
 }

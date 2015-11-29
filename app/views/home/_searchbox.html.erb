@@ -1,32 +1,37 @@
 <%= form_tag(customsearch_path, :method => "post", remote: true) do %>
-<%= text_field_tag(:q, "Type your search here", class: "searchbar") %>
-<p><%= label_tag(:as_qdr, "Select the time period you would like to receive results from:")%></p>
-<ul>
-	<li><%= radio_button_tag(:as_qdr, "false") %>
-	<%= label_tag(:as_qdr, "All results") %></li>
-	<li><%= radio_button_tag(:as_qdr, "d") %>
-	<%= label_tag(:as_qdr, "Results from past 24 hours") %></li>
-	<li><%= radio_button_tag(:as_qdr, "w") %>
-	<%= label_tag(:as_qdr, "Results from past week") %></li>
-	<li><%= radio_button_tag(:as_qdr, "m") %>
-	<%= label_tag(:as_qdr, "Results from past month") %></li>
-	<li><%= radio_button_tag(:as_qdr, "m6") %>
-	<%= label_tag(:as_qdr, "Results from past six months") %></li>
-	<li><%= radio_button_tag(:as_qdr, "y") %>
-	<%= label_tag(:as_qdr, "Results from past year") %></li>
-	<li><%= radio_button_tag(:as_qdr, "y2") %>
-	<%= label_tag(:as_qdr, "Results from past two years") %></li>
-</ul>
-<p><%= label_tag("site[]", "Limit search to specific sites")%></p>
-	
-<ul>
-	<li><%= label_tag("site[]", "Github")%>
-		<%= check_box_tag("site[]",  "github.com")%></li>
-	<li><%= label_tag("site[]", "Stack Overflow")%>
-		<%= check_box_tag("site[]", "stackoverflow.com")%></li>
-	<li><%= label_tag("site[]", "CSS Tricks")%>
-		<%= check_box_tag("site[]", "css-tricks.com")%></li>
-	</li>
-</ul>
+<%= text_field_tag(:q, "Type your search here", class: "searchbar") %><br>
+<div class="time-filter"><%= label_tag(:as_qdr, "Time Period")%><img class="down" src="/assets/down.png">
+  <div class="time-dropdown">
+  	<ul>
+		<li><%= radio_button_tag(:as_qdr, "false") %>
+		<%= label_tag(:as_qdr, "All results") %></li>
+		<li><%= radio_button_tag(:as_qdr, "d") %>
+		<%= label_tag(:as_qdr, "Past 24 hours") %></li>
+		<li><%= radio_button_tag(:as_qdr, "w") %>
+		<%= label_tag(:as_qdr, "Past week") %></li>
+		<li><%= radio_button_tag(:as_qdr, "m") %>
+		<%= label_tag(:as_qdr, "Past month") %></li>
+		<li><%= radio_button_tag(:as_qdr, "m6") %>
+		<%= label_tag(:as_qdr, "Past six months") %></li>
+		<li><%= radio_button_tag(:as_qdr, "y") %>
+		<%= label_tag(:as_qdr, "Past year") %></li>
+		<li><%= radio_button_tag(:as_qdr, "y2") %>
+		<%= label_tag(:as_qdr, "Past two years") %></li>
+	</ul>
+  </div>
+</div>
+
+<div class="sites-filter"><%= label_tag("site[]", "Filter sites")%><img class="down" src="/assets/down.png">
+  <div class="sites-dropdown">
+  	<ul>
+		<li><%= radio_button_tag("site[]",  "github.com")%>
+			<%= label_tag("site[]", "Github")%></li>
+		<li><%= radio_button_tag("site[]", "stackoverflow.com")%>
+			<%= label_tag("site[]", "Stack Overflow")%></li>
+		<li><%= radio_button_tag("site[]", "css-tricks.com")%>
+			<%= label_tag("site[]", "CSS Tricks")%></li>
+	</ul>
+  </div>
+</div>
 <%= submit_tag("Search", class: "search") %>
 <% end %>

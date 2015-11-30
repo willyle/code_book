@@ -12,12 +12,13 @@
 			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "hide-card" do %>
 				<div class="delete-card"><i class="fa fa-times"></i></div>
 			<% end %>
+				<div class="clear"></div>
 			<% @links.each do |link| %>
 				<% @resources = link.resources.all%>
 				<div class="answer-dropdown">
 			 		<div class="answer-text"><strong>Answer:</strong>
 						"<%= link.title %>"
-						<%= link.url %>
+						<%= link_to link.url, link.url, target: "_blank" %>
 						<p>
 							<% @resources.each do |resource| %>
 								<%= resource.note %>

@@ -31,7 +31,7 @@ class SearchesController < ApplicationController
 	end
 	def show
 		@user = User.find(session[:user_id])
-		@search = @user.searches.all
+		@search = @user.searches.all.reverse
 	end
 	def test
 		@q =  params[:q]

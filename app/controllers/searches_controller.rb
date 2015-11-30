@@ -53,4 +53,9 @@ class SearchesController < ApplicationController
     		nil
   		end
 	end
+
+	def destroy
+		@search = Search.find(params[:search])
+		@search.destroy
+	end
 end

@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resource :searches
   resources :users
 
+  delete "/card_delete" => "searches#destroy"
+  delete "/answer_delete" => "resources#destroy"
+
 
   
   post '/search_link' => 'searches#link'

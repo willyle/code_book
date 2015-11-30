@@ -7,10 +7,10 @@ class Search < ActiveRecord::Base
 				 
 	belongs_to :user
 
-	has_many :resources
+	has_many :resources, dependent: :destroy
 	has_many :links, through: :resources
 
-	has_many :tags
+	has_many :tags, dependent: :destroy
 	has_many :lanuages, through: :tags
 	def self.search(term,time)
 		key = ENV['GOOGLE_API_KEY']

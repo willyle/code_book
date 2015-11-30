@@ -84,8 +84,14 @@ body {
 		display: inline-block;
 	}
 	.answer-label {
+		text-align: left;
+		margin-left: 5px;
+	}
+
+	.delete-card {
 		text-align: right;
 		margin-right: 10px;
+		color: black;
 	}
 
 	.down {
@@ -103,6 +109,11 @@ body {
 		margin-left: 5px;
 		margin-top: 2px;
 		display: inline-block;
+	}
+	.delete-answer{
+		text-align: right;
+		margin-right: 10px;
+		color: black;
 	}
 }
 

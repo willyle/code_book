@@ -12,21 +12,22 @@
 			<% @links.each do |link| %>
 				<% @resources = link.resources.all%>
 				<div class="answer-dropdown">
-		 		<div class="answer-text">Answer: wwww.stackoverflow.com
-					"<%= link.title %>"
-					<%= link.url %>
-					<p>
-						<% @resources.each do |resource| %>
-							<%= resource.note %>
-						<% end %>
-					</p>
-				<% end %>
-				</div>
-				<div class="answer-language">
-					<% @tags.each do |tag| %>
-						<%= tag.language.name %>
+			 		<div class="answer-text">Answer: wwww.stackoverflow.com
+						"<%= link.title %>"
+						<%= link.url %>
+						<p>
+							<% @resources.each do |resource| %>
+								<%= resource.note %>
+							<% end %>
+						</p>
 					<% end %>
+					</div>
+					<div class="answer-language">
+						<% @tags.each do |tag| %>
+							<%= tag.language.name %>
+						<% end %>
+					</div>
 				</div>
-		</div>
+			</div>
 	<% end %>
 <% end %>

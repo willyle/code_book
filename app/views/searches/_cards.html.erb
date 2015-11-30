@@ -9,7 +9,7 @@
 			<div class="answer-label">See answers
 			  <img class="down" src="/assets/down.png">
 			</div>
-			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true do %>
+			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "hide-card" do %>
 				<div class="delete-card"><i class="fa fa-times"></i></div>
 			<% end %>
 			<% @links.each do |link| %>
@@ -21,7 +21,7 @@
 						<p>
 							<% @resources.each do |resource| %>
 								<%= resource.note %>
-								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true do %>
+								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
 									<div class="delete-answer"><i class="fa fa-times"></i></div>
 								<% end %>
 							<% end %>

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user
         session[:user_id] = @user.id
         flash[:notice] = "You have logged in successfully"
-        redirect_to dashboard_path(@user)
+        redirect_to dashboard_path
     else
       flash[:alert] = "Your information was incorrect."
       redirect_to sign_in_path

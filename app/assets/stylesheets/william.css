@@ -11,6 +11,12 @@
 	border: solid 1px black;
 	width: 200px;
 	height: 50px;
+	position: absolute;
+	left: 45%;
+	z-index: 10;
+}
+#controls a{
+	text-decoration: none;
 }
 #modal{
 	width: 100%;

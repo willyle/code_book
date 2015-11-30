@@ -3,10 +3,10 @@
 		<div class="recent-card">
 			<% @tags = search.tags.all %>
 			<% @links = search.links.all %>
-			<div class="question"><%= search.title %>
-				<p><%= search.note %></p>
+			<div class="question"><strong>Question:</strong> <%= search.title %>
+				<p><em><%= search.note %></em></p>
 			</div>
-			<div class="answer-label">Answers
+			<div class="answer-label">See answers
 			  <img class="down" src="/assets/down.png">
 			</div>
 			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true do %>
@@ -15,7 +15,7 @@
 			<% @links.each do |link| %>
 				<% @resources = link.resources.all%>
 				<div class="answer-dropdown">
-			 		<div class="answer-text">Answer: wwww.stackoverflow.com
+			 		<div class="answer-text"><strong>Answer:</strong>
 						"<%= link.title %>"
 						<%= link.url %>
 						<p>

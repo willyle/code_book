@@ -61,6 +61,11 @@ body {
 	color: grey;
 }
 
+#search-results {
+	position: relative;
+	z-index: -1;
+}
+
 #recent-container {
 	width: 35%;
 	margin:0 auto;
@@ -125,6 +130,7 @@ body {
 	background-color: #d1cfcf;
 	float:left;
 	text-align: center;
+	position: relative;
 	.time-down, .sites-down {
 		width: 20px;
 	}

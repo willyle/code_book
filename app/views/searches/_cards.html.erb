@@ -20,14 +20,14 @@
 								<%= resource.note %>
 							<% end %>
 						</p>
-					<% end %>
 					</div>
 					<div class="answer-language">
 						<% @tags.each do |tag| %>
-							<%= tag.language.name %>
+						<%= tag.language.name %>
 						<% end %>
 					</div>
 				</div>
-			</div>
+			<% end %>
+		</div>
 	<% end %>
 <% end %>

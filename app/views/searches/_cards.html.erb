@@ -21,9 +21,12 @@
 						"<%= link.title %>"
 						<%= link_to link.url, link.url, target: "_blank" %>
 							<% @resources.each do |resource| %>
-								<p><em><i class="fa fa-pencil"></i><%= best_in_place resource, :note, url: resource_path(resource) %></em></p>
-								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
-									<div class="delete-answer"><i class="fa fa-times"></i></div>
+								<% if resource.search_id == search.id %>
+									<p><em><i class="fa fa-pencil"></i><%= best_in_place resource, :note, url: resource_path(resource) %></em></p>
+
+									<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
+										<div class="delete-answer"><i class="fa fa-times"></i></div>
+									<% end %>
 								<% end %>
 							<% end %>
 					</div>

@@ -4,7 +4,8 @@
 			<% @tags = search.tags.all %>
 			<% @links = search.links.all %>
 			<div class="question"><%= search.title %>
-				<p><%= search.note %></p>
+				<% @search = Search.find(search.id) %>
+				<p><%= best_in_place @search, :note, url: note_update_path, param: search.id %></p>
 			</div>
 			<div class="answer-label">Answers
 			  <img class="down" src="/assets/down.png">
@@ -20,7 +21,8 @@
 						<%= link.url %>
 						<p>
 							<% @resources.each do |resource| %>
-								<%= resource.note %>
+									<% @resource = Resource.find(resource.id) %>
+								<%= best_in_place @resource, :note, url: edit_resource_path(@resource.id) %> 
 								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true do %>
 									<div class="delete-answer"><i class="fa fa-times"></i></div>
 								<% end %>

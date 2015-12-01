@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   get "/sign_in" => "sessions#new"
   post "/sign_in" => "sessions#create"
   get "/sign_out" => "sessions#destroy"
+  put "/note_update" => "searches#updatenote"
   resource :searches
   resources :users
+  resources :resources
 
   delete "/card_delete" => "searches#destroy"
   delete "/answer_delete" => "resources#destroy"

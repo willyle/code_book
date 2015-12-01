@@ -31,4 +31,9 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:resource])
     @resource.destroy
   end
+  def edit
+  end
+  def update
+  end
 end
+

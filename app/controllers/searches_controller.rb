@@ -58,4 +58,14 @@ class SearchesController < ApplicationController
 		@search = Search.find(params[:search])
 		@search.destroy
 	end
+	def edit
+		@search = Search.find(params[:search])
+	end
+	def updatenote
+		@search = Search.find(params[:search])
+		@search.update_attributes(params[:search])
+		resond_to do |format|
+			format.json {respond_with_bip(@search)}
+		end
+	end
 end

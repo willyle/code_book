@@ -161,3 +161,18 @@ body {
 		margin-top: 5px;
 	}
 }
+.konami{
+	top: 10%;
+	position: absolute; 
+	z-index: 99; 
+	padding: 2% 10%;
+}
+.konami-headline{
+	font-family: "VT323"; 
+	font-size: 85px; 
+}
+.konami-image{
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}

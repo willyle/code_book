@@ -1,11 +1,15 @@
 <% if session[:user_id] %>
 	<% @search.each do |search| %>
 		<div class="recent-card">
-			<% @tags = search.tags.all %>
 			<% @links = search.links.all %>
 			<div class="question"><strong>Question:</strong> <%= search.title %>
 				<% @search = Search.find(search.id) %>
 				<p><em><i class="fa fa-pencil"></i><%= best_in_place @search, :note, url: note_update_path(search_id: @search.id) %></em></p>
+			</div>
+			<div class="answer-language">
+				<% search.languages.each do |language| %>
+					&num;<%= language.name %>
+				<% end %>
 			</div>
 			<div class="answer-label">See answers
 			  <i class="fa fa-angle-down"></i>
@@ -14,25 +18,21 @@
 				<div class="delete-card"><i class="fa fa-times"></i></div>
 			<% end %>
 				<div class="clear"></div>
+
 			<% @links.each do |link| %>
 				<% @resources = link.resources.all%>
 				<div class="answer-dropdown">
 			 		<div class="answer-text"><strong>Answer:</strong>
 						"<%= link.title %>"
 						<%= link_to link.url, link.url, target: "_blank" %>
-							<% @resources.each do |resource| %>
-								<% if resource.search_id == search.id %>
-									<p><em><i class="fa fa-pencil"></i><%= best_in_place resource, :note, url: resource_path(resource) %></em></p>
+						<% @resources.each do |resource| %>
+							<% if resource.search_id == search.id %>
+								<p><em><i class="fa fa-pencil"></i><%= best_in_place resource, :note, url: resource_path(resource) %></em></p>
 
-									<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
-										<div class="delete-answer"><i class="fa fa-times"></i></div>
-									<% end %>
+								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
+									<div class="delete-answer"><i class="fa fa-times"></i></div>
 								<% end %>
 							<% end %>
-					</div>
-					<div class="answer-language">
-						<% @tags.each do |tag| %>
-						<%= tag.language.name %>
 						<% end %>
 					</div>
 				</div>

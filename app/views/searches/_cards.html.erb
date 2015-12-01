@@ -3,7 +3,7 @@
 		<div class="recent-card">
 			<% @tags = search.tags.all %>
 			<% @links = search.links.all %>
-			<div class="question"><strong>Question:</strong> <%= search.title %>
+			<div class="question"><i class="fa fa-search"></i> <%= search.title %>
 				<% @search = Search.find(search.id) %>
 				<p><em><i class="fa fa-pencil"></i><%= best_in_place @search, :note, url: note_update_path(search_id: @search.id) %></em></p>
 			</div>
@@ -17,7 +17,7 @@
 			<% @links.each do |link| %>
 				<% @resources = link.resources.all%>
 				<div class="answer-dropdown">
-			 		<div class="answer-text"><strong>Answer:</strong>
+			 		<div class="answer-text">
 						"<%= link.title %>"
 						<%= link_to link.url, link.url, target: "_blank" %>
 							<% @resources.each do |resource| %>

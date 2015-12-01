@@ -2,16 +2,21 @@
 <html>
 <head>
 	<link href="/assets/code_book.ico" rel="shortcut icon">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="initial-scale=1">
   <title>CodeBook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js" type="text/javascript"></script>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-  <div id="logo">CodeBook</div>
+  <div id="logo">
+    <img id="logo-icon" src="/assets/book.png">
+    <div id="logo-text">odeBook</div>
+  </div>
   <nav id="nav">
     <ul>
     <% if @page %>

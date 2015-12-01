@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #F2EDE3;
+    font-family: 'Lora', serif;
 }
 
 .notice {
@@ -23,7 +25,20 @@ body {
 #logo {
 	float: left;
 	font-size: 1.5em;
+	margin-top: -8px;
 	margin-left: 10px;
+	color: #808080;
+	#logo-icon {
+		width: 50px;
+		float: left;
+	}
+	#logo-text {
+		margin-top: 5px;
+		float: left;
+	}
+}
+h1 {
+	color: #808080;
 }
 
 #nav {
@@ -31,20 +46,26 @@ body {
 		list-style: none;
 		text-align: right;
 		margin-right: 10px;
+		color: #808080;
 	}
 	li {
 		display: inline-block;
-		background-color: #d1cfcf;
+    	background-color: #F2EDE3;
 		width: 100px;
 		height: 30px;
-		border: 1px solid black;
+		border: 1px solid #808080;
 	}
 	a:link, a:visited {
-		color: white;
+		color: #808080;
 		text-decoration: none;
 		display: block;
 		text-align: center;
 		margin-top: 5px;
+	}
+
+	li:hover, a:hover {
+		color: white;
+		background-color: #D0A234; 
 	}
 }
 
@@ -57,13 +78,14 @@ body {
 .searchbar {
 	width: 400px;
 	height: 30px;
-	border: 1px solid black;
-	color: grey;
+	border: 1px solid #808080;
+	color: #808080;
 }
 
 #search-results {
 	position: relative;
 	z-index: -1;
+	float:left;
 }
 
 #recent-container {
@@ -81,8 +103,9 @@ body {
 .recent-card {
 	width: 100%;
 	display: inline-block;
-	background-color: #d1cfcf;
 	margin-bottom: 5px;
+	color: white;
+	background-color: #D0A234;
 	.question {
 		margin-left: 5px;
 		margin-top: 2px;
@@ -101,15 +124,15 @@ body {
 	.delete-card {
 		width: 10px;
 		margin-right: 10px;
-		color: black;
+		color: white;
 	}
 
 	.answer-dropdown {
 		width: 100%;
-		background-color: #dbdbdb;
 		display: inline-block;
 		display: none;
 		border-bottom: 1px solid white;
+		background-color: #d3b87a;
 	}
 
 	.answer-text {
@@ -120,17 +143,21 @@ body {
 		p {
 			width: 95%;
 		}
+		a:link, a:visited {
+			text-decoration: none;
+			color:white;
+		}
 	}
 
 	.hide-answer {
-		color: black;
+		color: white;
 	}
 
 	.delete-answer{
 		width: 10px;
 		float: right;
 		margin-right: 10px;
-		color: black;
+		color: white;
 	}
 }
 
@@ -138,9 +165,10 @@ body {
 	margin-top: 5px;
 	padding-top: 8px;
 	margin-right: 5px;
-	width: 130px;
+	width: 145px;
 	height: 30px;
-	background-color: #d1cfcf;
+	background-color: #D0A234;
+	color: white;
 	float:left;
 	text-align: center;
 	position: relative;
@@ -153,7 +181,7 @@ body {
 	margin-top: -6px;
 	display: none;
 	ul {
-		background-color: #dbdbdb;
+		background-color: #D0A234;
 		padding-left: 0;
 	}
 	li {
@@ -161,6 +189,7 @@ body {
 		margin-top: 5px;
 	}
 }
+
 .konami{
 	top: 10%;
 	position: absolute; 
@@ -175,4 +204,26 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	display: block;
-}
+
+
+@media all and (max-width: 860px) {
+	#search-container {
+		width:95%;
+		margin:0 auto;
+		float:left;
+	}
+	.recent-container {
+		width:95%;
+		margin:0 auto;
+		float:left;
+	}
+	#search-results {
+		width: 95%;
+		margin: 0 auto;
+		position: relative;
+		z-index: -1;
+		float:left;
+	}
+	.searchbar {
+		width: 350px;
+	}

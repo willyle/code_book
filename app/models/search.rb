@@ -11,7 +11,7 @@ class Search < ActiveRecord::Base
 	has_many :links, through: :resources
 
 	has_many :tags, dependent: :destroy
-	has_many :lanuages, through: :tags
+	has_many :languages, through: :tags
 	def self.search(term,time)
 		key = ENV['GOOGLE_API_KEY']
 		cx = ENV['CUSTOM_SEARCH_ENGINE']

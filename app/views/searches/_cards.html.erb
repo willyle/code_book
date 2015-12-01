@@ -5,7 +5,7 @@
 			<% @links = search.links.all %>
 			<div class="question"><strong>Question:</strong> <%= search.title %>
 				<% @search = Search.find(search.id) %>
-				<p><%= best_in_place @search, :note, url: note_update_path(search_id: @search.id) %></p>
+				<p><em><i class="fa fa-pencil"></i><%= best_in_place @search, :note, url: note_update_path(search_id: @search.id) %></em></p>
 			</div>
 			<div class="answer-label">See answers
 			  <i class="fa fa-angle-down"></i>
@@ -20,16 +20,12 @@
 			 		<div class="answer-text"><strong>Answer:</strong>
 						"<%= link.title %>"
 						<%= link_to link.url, link.url, target: "_blank" %>
-						<p>
 							<% @resources.each do |resource| %>
-									<% @resource = Resource.find(resource.id) %>
-								<%= best_in_place @resource, :note, url: resource_path(@resource) %> 
-								<%= resource.note %>
+								<p><em><i class="fa fa-pencil"></i><%= best_in_place resource, :note, url: resource_path(resource) %></em></p>
 								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
 									<div class="delete-answer"><i class="fa fa-times"></i></div>
 								<% end %>
 							<% end %>
-						</p>
 					</div>
 					<div class="answer-language">
 						<% @tags.each do |tag| %>

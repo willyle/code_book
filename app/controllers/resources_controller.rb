@@ -32,10 +32,7 @@ class ResourcesController < ApplicationController
     @resource.destroy
   end
   def update
-    puts "***************"
     @resource = Resource.find(params[:id])
-    puts "**************"
-    puts @resource
     @resource.note = params[:resource][:note]
     @resource.save
     respond_to do |format|

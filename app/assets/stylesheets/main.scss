@@ -113,9 +113,13 @@ body {
 	}
 
 	.answer-text {
+		width: 99.5%;
 		margin-left: 5px;
 		margin-top: 2px;
 		display: inline-block;
+		p {
+			width: 95%;
+		}
 	}
 
 	.hide-answer {

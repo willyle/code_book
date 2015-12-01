@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".fa").on("click", function(){
-		$(this).parent().parent().parent().hide();
+	$(".hide-card").on("ajax:complete", function(){
+		$(this).parent().hide();
 	});
 });

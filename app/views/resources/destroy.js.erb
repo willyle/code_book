@@ -1,3 +1,5 @@
 $(document).ready(function(){
-	$(".delete-answer").parent().parent().html("");
+	$(".hide-answer").on("ajax:complete", function(){
+		$(this).parent().parent().hide();
+	});
 });

@@ -6,24 +6,29 @@
 			<div class="question"><%= search.title %>
 				<% @search = Search.find(search.id) %>
 				<p><%= best_in_place @search, :note, url: note_update_path, param: search.id %></p>
+			<div class="question"><strong>Question:</strong> <%= search.title %>
+				<p><em><%= search.note %></em></p>
 			</div>
-			<div class="answer-label">Answers
-			  <img class="down" src="/assets/down.png">
+			<div class="answer-label">See answers
+			  <i class="fa fa-angle-down"></i>
 			</div>
-			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true do %>
+			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "hide-card" do %>
 				<div class="delete-card"><i class="fa fa-times"></i></div>
 			<% end %>
+				<div class="clear"></div>
 			<% @links.each do |link| %>
 				<% @resources = link.resources.all%>
 				<div class="answer-dropdown">
-			 		<div class="answer-text">Answer: wwww.stackoverflow.com
+			 		<div class="answer-text"><strong>Answer:</strong>
 						"<%= link.title %>"
-						<%= link.url %>
+						<%= link_to link.url, link.url, target: "_blank" %>
 						<p>
 							<% @resources.each do |resource| %>
 									<% @resource = Resource.find(resource.id) %>
 								<%= best_in_place @resource, :note, url: edit_resource_path(@resource.id) %> 
 								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true do %>
+								<%= resource.note %>
+								<%= link_to answer_delete_path(resource: resource), method: :delete, remote: true, class: "hide-answer" do %>
 									<div class="delete-answer"><i class="fa fa-times"></i></div>
 								<% end %>
 							<% end %>

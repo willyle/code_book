@@ -1,5 +1,5 @@
 $(document).ready(function(){
 	$("#search_results").html('<%@search_results["items"].each do |result| %><p><h2><%=link_to result["title"], search_link_path(url: result["link"], search_id: @search.id, title: result["title"]), method: "post", target: "_blank", class: "searchlink" %></h2></p><p class="cb-greenlink"><%=result["link"]%></p><p><%description=result["snippet"].gsub("\n","")%><%=description%></p><%end%>');
 
-	$("#recent-container").find("h1").after('<div class="recent-card"><% @tags = @search.tags.all %><div class="question"><%= @search.title %><p><%= @search.note %></p></div><div class="answer-label">Answers<img class="down" src="/assets/down.png"></div><%= link_to card_delete_path(search: @search), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "hide-card" do %><div class="delete-card"><i class="fa fa-times"></i></div><% end %></div>');
+	$("#recent-container").find("h1").after('<div class="recent-card"><% @tags = @search.tags.all %><div class="question"><%= @search.title %><p><%= @search.note %></p></div><div class="answer-label">Answers<i class="fa fa-angle-down"></i></div><%= link_to card_delete_path(search: @search), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "hide-card" do %><div class="delete-card"><i class="fa fa-times"></i></div><% end %></div>');
 });

@@ -3,7 +3,7 @@
 	<%= submit_tag("Search", class: "search") %>
 	<br>
 	<div class="time-filter">
-		<%= label_tag(:as_qdr, "Time Period")%><img class="time-down" src="/assets/down.png">
+		<%= label_tag(:as_qdr, "Time Period")%> <i class="fa fa-angle-down"></i>
 		<div class="time-dropdown">
 			<ul>
 				<li><%= radio_button_tag(:as_qdr, "false") %>
@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="sites-filter">
-		<%= label_tag("site[]", "Filter sites")%><img class="sites-down" src="/assets/down.png">
+		<%= label_tag("site[]", "Filter sites")%> <i class="fa fa-angle-down"></i>
 
 		<div class="sites-dropdown">
 			<ul>

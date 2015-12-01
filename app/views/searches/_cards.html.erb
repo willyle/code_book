@@ -7,7 +7,7 @@
 				<p><em><%= search.note %></em></p>
 			</div>
 			<div class="answer-label">See answers
-			  <img class="down" src="/assets/down.png">
+			  <i class="fa fa-angle-down"></i>
 			</div>
 			<%= link_to card_delete_path(search: search), method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "hide-card" do %>
 				<div class="delete-card"><i class="fa fa-times"></i></div>

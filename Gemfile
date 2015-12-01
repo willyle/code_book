@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'pry'
 gem 'byebug'
 gem 'pry-byebug'
+gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

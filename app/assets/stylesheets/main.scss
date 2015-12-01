@@ -104,11 +104,6 @@ body {
 		color: black;
 	}
 
-	.down {
-		vertical-align: middle;
-		width: 20px;
-	}
-
 	.answer-dropdown {
 		width: 100%;
 		background-color: #dbdbdb;
@@ -145,10 +140,6 @@ body {
 	float:left;
 	text-align: center;
 	position: relative;
-	.time-down, .sites-down {
-		width: 20px;
-		vertical-align: middle;
-	}
 }
 
 .time-dropdown, .sites-dropdown {

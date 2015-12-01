@@ -31,9 +31,16 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:resource])
     @resource.destroy
   end
-  def edit
-  end
   def update
+    puts "***************"
+    @resource = Resource.find(params[:id])
+    puts "**************"
+    puts @resource
+    @resource.note = params[:resource][:note]
+    @resource.save
+    respond_to do |format|
+      format.json {respond_with_bip(@resource)}
+    end
   end
 end
 

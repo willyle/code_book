@@ -23,7 +23,7 @@
       
         <li><%= link_to "Save", save_path(url: params[:url], search_id: params[:search_id], title: params[:title]), method: "post", remote: true, class: "save" %></li>
         <li><%= link_to "Save & Close", save_path(url: params[:url], search_id: params[:search_id], title: params[:title]), method: "post", remote: true, class: "save_close" %></li>
-        <li><%= link_to "Close", "", id: "close" %></li>
+        <li><%= link_to "Close", save_path(close: true), method: "post", remote: true, id: "close" %></li>
    
     <div id="save_message">
     </div>

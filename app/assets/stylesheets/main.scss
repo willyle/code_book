@@ -56,6 +56,7 @@ h1 {
 		width: 100px;
 		height: 30px;
 		border: 1px solid #808080;
+		border-radius: 5px;
 	}
 	a:link, a:visited {
 		color: #808080;
@@ -99,7 +100,8 @@ h1 {
 	margin-bottom: 5px;
 	color: white;
 	background-color: #D0A234;
-	float:left;
+	border-radius: 8px;
+	float: left;
 
 	.question {
 		margin-left: 5px;
@@ -135,6 +137,8 @@ h1 {
 		display: inline-block;
 		display: none;
 		border-bottom: 1px solid white;
+		background-color: #d3b87a;
+		border-radius: 0 0 8px 8px;
 		background-color: #ceab5a;
 	}
 
@@ -207,6 +211,8 @@ h1 {
 	}
 }
 
+//front page styling
+
 .homepage-body {
  	background: 
  		linear-gradient(
@@ -249,10 +255,11 @@ h1 {
 	position: absolute;
 	right: 5%;
 	bottom: 15%;
-	text-shadow: #ffffff 0px 1px 0px;
+	text-shadow: #000 0px 0.25px 0px;
+	color: rgb(5, 5, 5);
     font-family: "Consolas", "Courier New", "Courier";
-    font-size: 3em;
-    line-height: 4.85em;
+    font-size: 4rem;
+    line-height: 4.85rem;
     font-weight: 500;
 }
 .konami {

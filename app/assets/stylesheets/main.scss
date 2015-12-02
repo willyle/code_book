@@ -318,7 +318,7 @@ h1 {
 	}
 }
 
-@media all and (min-width: 601px) and (max-width: 860px) {
+@media all and (min-width: 601px) and (max-width: 799px) {
 	#container {
 		width: 90%;
 		margin: 0 auto;
@@ -356,8 +356,23 @@ h1 {
 		margin: 0 auto;
 		margin-top: 40px;
 		.recent-card {
-			width: 49.6%;
-			margin-right: 5px;
+			width: 100%;
+		}
+	}
+}
+  
+@media all and (min-width: 800px) {
+	#container {
+		width: 95%;
+	}
+
+	#all-container {
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 40px;
+		margin-left: 6px;
+		.recent-card {
+			width: 49.2%;
 		}
 	}
 }

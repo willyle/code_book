@@ -228,3 +228,46 @@ h1 {
 		width: 350px;
 	}
 }
+.homepage-body {
+ 	background: 
+ 		linear-gradient(
+			rgba(208, 162, 52, 0.25), 
+			rgba(208, 162, 52, 0.25)
+	  		),
+ 		url("desktop.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  }
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+.element-type{
+	position: absolute;
+	right: 5%;
+	bottom: 15%;
+	text-shadow: #ffffff 0px 1px 0px;
+    font-family: "Consolas", "Courier New", "Courier";
+    font-size: 3em;
+    line-height: 4.85em;
+    font-weight: 500;
+}

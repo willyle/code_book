@@ -1,6 +1,5 @@
 <%= form_tag(customsearch_path, :method => "post", remote: true) do %>
 	<%= text_field_tag(:q, nil, placeholder: "Type your search here", class: "searchbar") %>
-	<%= submit_tag("Search", class: "search") %>
 	<br>
 	<div class="filter-wrapper">
 		<div class="time-filter">
@@ -24,7 +23,6 @@
 				</ul>
 			</div>
 		</div>
-
 		<div class="sites-filter">
 			<%= label_tag("site[]", "Filter sites")%> <i class="fa fa-angle-down"></i>
 
@@ -39,6 +37,7 @@
 				</ul>
 			</div>
 		</div>
+		<div class="clear"></div>
 	</div>
 <% end %>
 <br><br>

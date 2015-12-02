@@ -307,11 +307,13 @@ h1 {
     color: #808080;
     padding: 0 8%;
 }
-hr{
+
+hr { 
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
 #nav-button {
 	ul {
 		list-style: none;
@@ -351,10 +353,10 @@ hr{
   	height: 320px;
   	background-color: #D0A234;
   	border-radius: 5px;
-  	padding-top: 5px;
   	h1 {
   		text-align: center;
   		color: white;
+  		padding-top: 10px;
   	}
   	.enter-field {
   		width: 250px;
@@ -365,10 +367,14 @@ hr{
   		margin-bottom: 10px;
   	}
   	.button {
+  		-webkit-appearance: none;
   		width: 250px;
   		height: 40px;
   		display: block;
   		margin: 0 auto;
+  		color: #808080;
+  		background-color: #F2EDE3;
+  		border-radius: 5px;
   	}
   }
 

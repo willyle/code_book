@@ -201,11 +201,21 @@ h1 {
 	margin: 0 auto;
 	margin-top: 40px;
 	.recent-card {
-		float:left;
-		width: 49%;
-	    margin-right: 3px;
-	    margin-left: 2px;
-	}
+
+.konami{
+	top: 10%;
+	position: absolute; 
+	z-index: 99; 
+	padding: 2% 10%;
+}
+.konami-headline{
+	font-family: "VT323"; 
+	font-size: 85px; 
+}
+.konami-image{
+	width: 80%;
+	margin: 0 auto;
+	display: block;
 }
 
 @media all and (min-width: 400px) and (max-width: 600px) {
@@ -288,4 +298,47 @@ h1 {
 		z-index: -1;
 		float:left;
 	}
+}
+.homepage-body {
+ 	background: 
+ 		linear-gradient(
+			rgba(208, 162, 52, 0.25), 
+			rgba(208, 162, 52, 0.25)
+	  		),
+ 		url("desktop.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  }
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+.element-type{
+	position: absolute;
+	right: 5%;
+	bottom: 15%;
+	text-shadow: #ffffff 0px 1px 0px;
+    font-family: "Consolas", "Courier New", "Courier";
+    font-size: 3em;
+    line-height: 4.85em;
+    font-weight: 500;
 }

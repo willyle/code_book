@@ -17,4 +17,8 @@
 //= require turbolinks
 $(document).ready(function(){
 	jQuery(".best_in_place").best_in_place();
-	});
+	cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () { 
+		var konamiBox = '<div class="konami"> <img src="/assets/konami.png" class="konami-image"> <h1 class="konami-headline">ALL YOUR SEARCH ARE BE LOGGED BY US.</h1> </div>';
+		$(konamiBox).hide().appendTo('body').fadeIn(4000).delay(500).fadeOut(1000);
+		})
+	})

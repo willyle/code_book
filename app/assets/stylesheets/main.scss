@@ -78,7 +78,7 @@ h1 {
 }
 
 .searchbar {
-	width: 400px;
+	width: 80%;
 	height: 30px;
 	border: 1px solid #808080;
 	color: #808080;
@@ -91,7 +91,7 @@ h1 {
 }
 
 #recent-container {
-	width: 35%;
+	width: 40%;
 	float: right;
 }
 
@@ -170,6 +170,7 @@ h1 {
 }
 .filter-wrapper {
 	width: 300px;
+	float: left;
 }
 
 .time-filter, .sites-filter {
@@ -192,7 +193,7 @@ h1 {
 	margin-top: -6px;
 	display: none;
 	ul {
-		background-color: #D0A234;
+		background-color: #d3b87a;
 		padding-left: 0;
 	}
 	li {
@@ -278,7 +279,31 @@ h1 {
 	display: block;
 }
 
-@media all and (min-width: 400px) and (max-width: 600px) {
+@media all and (min-width: 300px) and (max-width: 600px) {
+	#logo {
+		margin-top: -3px;
+	}
+
+	#logo-text {
+		display: none;
+	}
+	#nav {
+		ul {
+			list-style: none;
+			text-align: center;
+			color: #808080;
+		}
+		li {
+			display: inline-block;
+	    	background-color: #F2EDE3;
+			width: 40%;
+			height: 30px;
+			margin-bottom: 3px;
+			border: 1px solid #808080;
+			border-radius: 5px;
+		}
+	}
+
 	#container {
 		width: 90%;
 		margin: 0 auto;
@@ -293,6 +318,12 @@ h1 {
 		.time-filter, .sites-filter {
 			display: inline-block;
 		}
+	}
+
+	.filter-wrapper {
+		width: 300px;
+		float: none;
+		margin: 0 auto;
 	}
 
 	#recent-container {
@@ -344,6 +375,12 @@ h1 {
 		width: 100%;
 	}
 
+	.filter-wrapper {
+		width: 300px;
+		float: none;
+		margin: 0 auto;
+	}
+
 	#recent-container {
 		width: 100%;
 		margin:0 auto;
@@ -363,6 +400,9 @@ h1 {
 		width: 100%;
 		margin: 0 auto;
 		margin-top: 40px;
+		h1 {
+			text-align: center;
+		}
 		.recent-card {
 			width: 100%;
 		}

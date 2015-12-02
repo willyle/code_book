@@ -7,10 +7,12 @@ body {
 
 .notice {
 	color: green;
+	margin-left: 15px;
 }
 
 .alert {
 	color: red;
+	margin-left: 15px;
 }
 
 .clear {
@@ -71,7 +73,6 @@ h1 {
 
 #search-container {
 	width:60%;
-	margin:0 auto;
 	float:left;
 }
 
@@ -90,22 +91,16 @@ h1 {
 
 #recent-container {
 	width: 35%;
-	margin:0 auto;
 	float: right;
-}
-
-#all-container {
-	width: 65%;
-	margin: 0 auto;
-	float: left;
 }
 
 .recent-card {
 	width: 100%;
-	display: inline-block;
 	margin-bottom: 5px;
 	color: white;
 	background-color: #D0A234;
+	float:left;
+
 	.question {
 		margin-left: 5px;
 		margin-top: 2px;
@@ -116,9 +111,16 @@ h1 {
 		margin-left: 5px;
 	}
 
+	.note {
+		height: 32px;
+	}
+
+	.answer-language {
+		margin: -8px 0px 5px 5px;
+	}
+
 	.hide-card {
 		float: right;
-		color: black;
 	}
 
 	.delete-card {
@@ -132,7 +134,7 @@ h1 {
 		display: inline-block;
 		display: none;
 		border-bottom: 1px solid white;
-		background-color: #d3b87a;
+		background-color: #ceab5a;
 	}
 
 	.answer-text {
@@ -144,6 +146,7 @@ h1 {
 			width: 95%;
 		}
 		a:link, a:visited {
+ 			overflow-wrap: break-word;
 			text-decoration: none;
 			color:white;
 		}
@@ -159,6 +162,9 @@ h1 {
 		margin-right: 10px;
 		color: white;
 	}
+}
+.filter-wrapper {
+	width: 300px;
 }
 
 .time-filter, .sites-filter {
@@ -190,16 +196,41 @@ h1 {
 	}
 }
 
-@media all and (max-width: 860px) {
-	#search-container {
-		width:95%;
-		margin:0 auto;
+#all-container {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 40px;
+	.recent-card {
 		float:left;
+		width: 49%;
+	    margin-right: 3px;
+	    margin-left: 2px;
 	}
-	.recent-container {
-		width:95%;
+}
+
+@media all and (min-width: 400px) and (max-width: 600px) {
+	#container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#search-container {
+		width: 100%;
+		margin: 0 auto;
+		h1 {
+			text-align: center;
+		}
+		.time-filter, .sites-filter {
+			display: inline-block;
+		}
+	}
+
+	#recent-container {
+		width: 100%;
 		margin:0 auto;
-		float:left;
+		h1 {
+			text-align: center;
+		}
 	}
 	#search-results {
 		width: 95%;
@@ -209,6 +240,52 @@ h1 {
 		float:left;
 	}
 	.searchbar {
-		width: 350px;
+		width: 100%;
+	}
+
+	#all-container {
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 40px;
+		h1 {
+			text-align: center;
+		}
+		.recent-card {
+			width: 100%;
+			}
+	}
+}
+
+@media all and (min-width: 601px) and (max-width: 860px) {
+	#container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#search-container {
+		width: 100%;
+		margin: 0 auto;
+		h1 {
+			text-align: center;
+		}
+	}
+
+	.searchbar {
+		width: 75%;
+	}
+
+	#recent-container {
+		width: 100%;
+		margin:0 auto;
+		h1 {
+			text-align: center;
+		}
+	}
+	#search-results {
+		width: 95%;
+		margin: 0 auto;
+		position: relative;
+		z-index: -1;
+		float:left;
 	}
 }

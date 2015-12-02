@@ -1,13 +1,60 @@
-<h1>Profile</h1>
-<ul>
-	<li>Username: <%= @user.username %></li>
-	<li>Email:  <%= @profile.email %></li>
-	<li>First Name: <%= @profile.fname %></li>
-	<li>Last Name: <%= @profile.lname %></li>
-	<li>Birthday: <%= @profile.birthday %></li>
-	<li>Work: <%= @profile.work %></li>
-	<li>Experience (years): <%= @profile.exp_level %></li>
-</ul>
 
-<%= link_to 'Edit Profile', edit_user_path %>
-<%= link_to 'Delete Account', @user, method: :delete, data: {confirm: "Are you sure?"} %>
+<div class="profile-container">
+	
+	<div class="profile-head">
+			<%= @profile.fname + " " %> <%= @profile.lname %>'s Profile
+		<hr>
+	</div>
+	<div class="profile-wrap">
+		<table>
+			<tr>
+				<td class="profile-category">
+					Username
+				</td>
+				<td class="profile-item">
+					<%= @user.username %>
+				</td>
+			</tr>
+			<tr>
+				<td class="profile-category">
+					email
+				</td>
+				<td class="profile-item">
+					<%= @profile.email %>
+				</td>
+			</tr>
+			<tr>
+				<td class="profile-category">
+					Birthday
+				</td>
+				<td class="profile-item">
+					<%= @profile.birthday %>
+				</td>
+			</tr>
+			<tr>
+				<td class="profile-category">
+					Work
+				</td>
+				<td class="profile-item">
+					<%= @profile.work %>
+				</td>
+			</tr>
+			<tr>
+				<td class="profile-category">
+					Experience
+				</td>
+				<td class="profile-item">
+					<%= @profile.exp_level %>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<nav id="nav-button">
+	<ul>
+		<li><%= link_to 'Edit Profile', edit_user_path %></li>
+		<li><%= link_to 'Delete Account', @user, method: :delete, data: {confirm: "Are you sure?"} %></li>
+	</ul>
+	</nav>
+</div>
+
+

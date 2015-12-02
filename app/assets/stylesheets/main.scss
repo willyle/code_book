@@ -112,7 +112,8 @@ h1 {
 	}
 
 	.note {
-		height: 32px;
+		height: 36px;
+		overflow: scroll;
 	}
 
 	.answer-language {
@@ -333,7 +334,7 @@ h1 {
 	}
 
 	.searchbar {
-		width: 75%;
+		width: 100%;
 	}
 
 	#recent-container {

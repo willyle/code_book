@@ -69,4 +69,42 @@ class SearchesController < ApplicationController
 			format.json {respond_with_bip(@search)}
 		end
 	end
+	def filter
+		@searches = User.find(session[:user_id]).searches.reverse
+		@filter_searches = []
+
+		if params[:query] != ""
+			keywords = params[:query].split(" ")
+
+			@searches.each do |search|
+				push = false
+
+				keywords.each do |keyword|
+					puts "keyword: " + keyword.inspect
+					puts "title: " + search.title.inspect
+					if search.title.downcase.include? keyword.downcase
+						push = true
+					end
+
+					if search.note.downcase.include? keyword.downcase
+						push = true
+					end
+
+					search.languages.each do |language|
+						if language.name.downcase.include? keyword.downcase
+							push = true
+						end
+					end
+				end
+
+				if push
+					@filter_searches.push(search)
+				end 
+			end
+		else
+			@filter_searches = @searches
+		end
+		puts @filter_searches.inspect
+		@filter_searches
+	end
 end

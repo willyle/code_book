@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   
   post '/search_link' => 'searches#link'
   post '/save' => 'resources#save'
+  post '/filter' => 'searches#filter'
 end

@@ -1,6 +1,11 @@
-<h1>Sign In</h1>
-  <%= form_tag "sign_in" do %>
-    <%= text_field_tag :login, "", placeholder: "Username or Email" %>
-    <%= password_field_tag :password, "", placeholder: "Password" %>
-    <%= submit_tag "Submit" %>
-  <% end %>
+<%= javascript_include_tag "typed.js"%>
+<body class="homepage-body">
+	<div class="enter-bx">
+		<h1>Sign In</h1>
+		  <%= form_tag "sign_in" do %>
+		    <%= text_field_tag :login, "", placeholder: "Username or Email", class: "enter-field" %>
+		    <%= password_field_tag :password, "", placeholder: "Password", class: "enter-field" %>
+		    <%= submit_tag "Submit", class: "button" %>
+		  <% end %>
+	</div>
+</body>

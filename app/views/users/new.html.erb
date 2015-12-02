@@ -1,8 +1,13 @@
-<h1>Sign up</h1>
-<%= form_tag "/sign_up", method: "post" do %>
-  <%= email_field_tag :email, "", placeholder: "Email" %>
-  <%= text_field_tag :username, "", placeholder: "Username" %>
-  <%= password_field_tag :password, "", placeholder: "Password" %>
-  <%= password_field_tag :password_confirmation, "", placeholder: "Confirm Password" %>
-  <%= submit_tag "Submit" %>
-<% end %>
+<%= javascript_include_tag "typed.js"%>
+<body class="homepage-body">
+  <div class="enter-bx">
+	<h1>Sign up</h1>
+	<%= form_tag "/sign_up", method: "post" do %>
+	  <%= text_field_tag :username, "", placeholder: "Username", class: "enter-field" %>
+	  <%= email_field_tag :email, "", placeholder: "Email", class: "enter-field"%>
+	  <%= password_field_tag :password, "", placeholder: "Password", class: "enter-field" %>
+	  <%= password_field_tag :password_confirmation, "", placeholder: "Confirm Password", class: "enter-field" %>
+	  <%= submit_tag "Submit", class: "button" %>
+	<% end %>
+  </div>
+</body>

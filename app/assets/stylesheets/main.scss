@@ -39,6 +39,7 @@ body {
 		float: left;
 	}
 }
+
 h1 {
 	color: #808080;
 }
@@ -279,6 +280,33 @@ h1 {
 	display: block;
 }
 
+.enter-bx {
+	margin: 0 auto;
+	width: 350px;
+  	height: 320px;
+  	background-color: #D0A234;
+  	border-radius: 5px;
+  	padding-top: 5px;
+  	h1 {
+  		text-align: center;
+  		color: white;
+  	}
+  	.enter-field {
+  		width: 250px;
+  		height: 30px;
+  		border-radius: 5px;
+  		display: block;
+  		margin: 0 auto;
+  		margin-bottom: 10px;
+  	}
+  	.button {
+  		width: 250px;
+  		height: 40px;
+  		display: block;
+  		margin: 0 auto;
+  	}
+  }
+
 @media all and (min-width: 300px) and (max-width: 600px) {
 	#logo {
 		margin-top: -3px;
@@ -302,6 +330,10 @@ h1 {
 			border: 1px solid #808080;
 			border-radius: 5px;
 		}
+	}
+
+	#text-body {
+		font-size: 0.23em;
 	}
 
 	#container {
@@ -363,6 +395,10 @@ h1 {
 		margin: 0 auto;
 	}
 
+	#text-body {
+		font-size: 0.23em;
+	}
+
 	#search-container {
 		width: 100%;
 		margin: 0 auto;
@@ -408,7 +444,7 @@ h1 {
 		}
 	}
 }
-  
+
 @media all and (min-width: 800px) {
 	#container {
 		width: 95%;

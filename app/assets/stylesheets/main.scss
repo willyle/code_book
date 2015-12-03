@@ -468,10 +468,7 @@ hr {
 	}
 
 	#filter {
-		width: 49%;
-		height: 30px;
-		margin-bottom: 10px;
-		margin: 0 auto;
+		width: 99%;
 	}
 
 	#all-container {
@@ -528,6 +525,10 @@ hr {
 		position: relative;
 		z-index: -1;
 		float:left;
+	}
+
+	#filter {
+		width: 99%;
 	}
 
 	#all-container {

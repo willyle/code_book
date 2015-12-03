@@ -1,13 +1,9 @@
 <%= javascript_include_tag "dashboard" %>
-
-<%= form_tag "/filter", remote: true do %>
-	<%= text_field_tag :query, "", placeholder: "Enter keywords to filter" %>
-	<%= submit_tag "Submit", id: "filter" %>
-<% end %>
-<%= link_to "Reset Filter", filter_path(query: ""), method: "post", remote: true %>
-
 <div id="all-container">
 	<h1>My Searches</h1>
+	<%= form_tag "/filter", remote: true do %>
+	<%= text_field_tag :query, "", placeholder: "Enter keywords to filter", id: "filter" %><%= submit_tag "Submit" %>	<%= link_to "Reset Filter", filter_path(query: ""), method: "post", remote: true %><br>
+	<% end %>
 	<%= render "cards" %>
-<div class="clear"></div>
+	<div class="clear"></div>
 </div>

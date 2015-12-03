@@ -203,6 +203,12 @@ h1 {
 	}
 }
 
+#filter {
+	width: 40%;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
 #all-container {
 	width: 100%;
 	margin: 0 auto;
@@ -279,7 +285,9 @@ h1 {
 	margin: 0 auto;
 	display: block;
 }
+
 //profile page styling
+
 .profile-item {
 	background-color: #F2EDE3;
 	font-family: 'Lora', serif;
@@ -347,6 +355,8 @@ hr {
 	}
 }
 
+//signup, signin stlying
+
 .enter-bx {
 	margin: 0 auto;
 	width: 350px;
@@ -386,6 +396,7 @@ hr {
 	#logo-text {
 		display: none;
 	}
+
 	#nav {
 		ul {
 			list-style: none;
@@ -401,6 +412,10 @@ hr {
 			border: 1px solid #808080;
 			border-radius: 5px;
 		}
+	}
+
+	.enter-bx {
+		width: 300px;
 	}
 
 	#text-body {
@@ -443,8 +458,16 @@ hr {
 		z-index: -1;
 		float:left;
 	}
+
 	.searchbar {
 		width: 100%;
+	}
+
+	#filter {
+		width: 49%;
+		height: 30px;
+		margin-bottom: 10px;
+		margin: 0 auto;
 	}
 
 	#all-container {

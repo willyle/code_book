@@ -209,6 +209,11 @@ h1 {
 	margin-bottom: 10px;
 }
 
+#reset {
+	color: #808080;
+	margin-left: 5px;
+}
+
 #all-container {
 	width: 100%;
 	margin: 0 auto;
@@ -316,10 +321,13 @@ h1 {
     padding: 0 8%;
 }
 
-hr { 
+hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    .edit-profile{
+	margin-left: 10px
+	}
 }
 
 #nav-button {
@@ -466,7 +474,7 @@ hr {
 	}
 
 	#filter {
-		width: 99%;
+		width: 70%;
 	}
 
 	#all-container {
@@ -526,7 +534,7 @@ hr {
 	}
 
 	#filter {
-		width: 99%;
+		width: 80%;
 	}
 
 	#all-container {

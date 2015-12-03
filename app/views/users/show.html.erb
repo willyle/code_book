@@ -2,7 +2,10 @@
 <div class="profile-container">
 	
 	<div class="profile-head">
-			<%= best_in_place @profile, :fname, url: profile_path(id: @user.profile.id) %><%= " " %> <%= best_in_place @profile, :lname, url: profile_path(id: @user.profile.id) %>'s Profile
+			<%= best_in_place @profile, :fname, url: profile_path(id: @user.profile.id) %>
+			<%= " " %> 
+			<%= best_in_place @profile, :lname, url: profile_path(id: @user.profile.id) %>'s 
+			Profile 
 		<hr>
 	</div>
 	<div class="profile-wrap">
@@ -12,7 +15,7 @@
 					Username
 				</td>
 				<td class="profile-item">
-					<%= best_in_place @user, :username %>
+					<%= best_in_place @user, :username%>
 				</td>
 			</tr>
 			<tr>
@@ -20,7 +23,7 @@
 					email
 				</td>
 				<td class="profile-item">
-					<%= best_in_place @profile, :email, url: profile_path(id: @user.profile.id) %>
+					<%= best_in_place @profile, :email, url: profile_path(id: @user.profile.id)%>
 				</td>
 			</tr>
 			<tr>
@@ -44,14 +47,13 @@
 					Experience
 				</td>
 				<td class="profile-item">
-					<%= best_in_place @profile, :exp_level, url: profile_path(id: @user.profile.id), :as => :select, collection: %w(0-1 2-4 5-7 8-10 11+) %>
+					<%= best_in_place @profile, :exp_level, url: profile_path(id: @user.profile.id), :as => :select, collection: %w(0-1 2-4 5-7 8-10 11+) %> years
 				</td>
 			</tr>
 		</table>
 	</div>
 	<nav id="nav-button">
 	<ul>
-		<li><%= link_to 'Edit Profile', edit_user_path %></li>
 		<li><%= link_to 'Delete Account', @user, method: :delete, data: {confirm: "Are you sure?"} %></li>
 	</ul>
 	</nav>

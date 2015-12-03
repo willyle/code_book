@@ -391,6 +391,10 @@ hr {
 @media all and (min-width: 300px) and (max-width: 600px) {
 	#logo {
 		margin-top: -3px;
+		width: 30px;
+		#logo-icon {
+			width: 40px;
+		}
 	}
 
 	#logo-text {

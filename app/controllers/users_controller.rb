@@ -27,16 +27,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
     @profile = @user.profile
   end
 
   def update
+    @user = User.find(params[:id])
     @user.update(edit_user_params)
     @profile = @user.profile
-    @profile.update(profile_params)
-    puts "***********"
-    puts @profile.errors.full_messages
-    redirect_to user_path(@user), notice: "Sucessfully updated profile."
+    #@profile.update(profile_params)
+    respond_to do |format|
+      format.json {respond_with_bip(@user)}
+    end
+    # puts "***********"
+    # puts @profile.errors.full_messages
+    #redirect_to user_path(@user), notice: "Sucessfully updated profile."
   end
 
   def show

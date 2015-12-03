@@ -2,7 +2,7 @@
 <div class="profile-container">
 	
 	<div class="profile-head">
-			<%= @profile.fname + " " %> <%= @profile.lname %>'s Profile
+			<%= best_in_place @profile, :fname, url: profile_path(id: @user.profile.id) %><%= " " %> <%= best_in_place @profile, :lname, url: profile_path(id: @user.profile.id) %>'s Profile
 		<hr>
 	</div>
 	<div class="profile-wrap">
@@ -12,7 +12,7 @@
 					Username
 				</td>
 				<td class="profile-item">
-					<%= @user.username %>
+					<%= best_in_place @user, :username %>
 				</td>
 			</tr>
 			<tr>
@@ -20,7 +20,7 @@
 					email
 				</td>
 				<td class="profile-item">
-					<%= @profile.email %>
+					<%= best_in_place @profile, :email, url: profile_path(id: @user.profile.id) %>
 				</td>
 			</tr>
 			<tr>
@@ -28,7 +28,7 @@
 					Birthday
 				</td>
 				<td class="profile-item">
-					<%= @profile.birthday %>
+					<%= best_in_place @profile, :birthday, url: profile_path(id: @user.profile.id) %>
 				</td>
 			</tr>
 			<tr>
@@ -36,7 +36,7 @@
 					Work
 				</td>
 				<td class="profile-item">
-					<%= @profile.work %>
+					<%= best_in_place @profile, :work, url: profile_path(id: @user.profile.id) %>
 				</td>
 			</tr>
 			<tr>
@@ -44,7 +44,7 @@
 					Experience
 				</td>
 				<td class="profile-item">
-					<%= @profile.exp_level %>
+					<%= best_in_place @profile, :exp_level, url: profile_path(id: @user.profile.id), :as => :select, collection: %w(0-1 2-4 5-7 8-10 11+) %>
 				</td>
 			</tr>
 		</table>

@@ -8,4 +8,10 @@ $(document).ready(function(){
     $(".fa").on("click", function(){
         $(this).siblings(".sites-dropdown").slideToggle(100);
     });
+
+    $(".searchbar").on("keypress", function(e){
+    	  if(e.keyCode == 13){
+    	  		$(".time-dropdown, .sites-dropdown").hide();
+    	  }
+    });
 });

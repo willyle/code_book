@@ -1,28 +1,10 @@
-== README
+== Code Book README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Code Book makes researching coding questions a snap and solves the problem of having to dig through links to find a page you know you already answered your question in the past. 
 
-Things you may want to cover:
+Upon entering a query, Code Book utilizes a Google Custom Search Engine and the Google Search API, parses results using JSON, and uses AJAX to insert those results into the page without reloading. At the same time, the application detects and categorizes any terms referring to a specific language and stores that plus the query terms on a separate search card. 
 
-* Ruby version
+Users view individual results in a new window framed by a menu that allows users to save pages that answer their question with just the click of a button.
 
-* System dependencies
+All cards are searchable and allow users to record their own notes.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
